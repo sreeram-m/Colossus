@@ -142,8 +142,9 @@ def main():
     nonce = cipherAESe.nonce
     print("Encrypting the message with AES......")
     cipherText=encryptAES(cipherAESe,plainText)
-    f=open(r"<text-file>","w+b")
-    f.write(cipherText)
+    txt = str(cipherText).encode()
+    f=open(r"first.txt","w+b")
+    f.write(txt)
     f.close()
     print("Upload Done")
     #Encrypt the symmetric key under the key encapsulation scheme, using Alice’s public key.
